@@ -1,0 +1,40 @@
+1. O método Path cria uma instancia do Objeto com Paths que é um outro Objeto,
+ele deve ser referenciado pelo local onde está o diretório ou arquivo.
+
+2. Sempre usar o método ``File.isDirectory(<argumento>)`` para checar se o diretório
+é existente, ele vai retornar um booleano.
+(Diretório = Pasta).
+
+**Observação**:
+- Se você usar um ``isDirectory`` em um arquivo ele vai retornar um booleano falso, ele busca diretórios.
+- O Path também retorna arquivos, não apenas diretórios.
+
+3. Você pode instanciar um Files usando um Path, com isto,
+pode usar o método ``Files.readAllLines`` que retornará um List<String>
+com todas as linhas do seu arquivo.
+
+**Observação**:
+- Usando ``byte[] nome_disto = Files.readAllBytes();`` ele obterá a Lista/Vetor de bytes do arquivo.
+- Com a afirmação dos bytes acima, você pode usar o ``Files.write(arquivo, nome_disto);``, então o arquivo escrito será reescrito por bytes de outro.
+- O que destaquei nesta observação é a clonagem de arquivos usando bytes.
+
+4. File - Esta classe cria arquivos e tem 3 métodos super relevantes, além de muitos outros
+que podem ser trabalhados pelo desenvolvedor.
+
+**Métodos relevantes**
+- exist() - Retorna um booleano se o arquivo existe.
+- delete() - Deleta o arquivo caso ele exista.
+- createNewFile() - Cria o arquivo.
+
+5. FileReader - Esta classe lê arquivos, mas é mal otimizada, conta com um ``close()``,
+então é recomendada ser usada com um ``try-with-resources`` para fazer o autocloseable.
+
+**Observação**
+- Sempre que lido os arquivos com o ``read()`` ele retornará -1, com isso eu posso fazer algo como ``while(fr.read() = -1);`` ou muitos outros.
+
+6. FileWriter - Este método é capaz de escrever arquivos e muito mais, ele também é mal otimizado.
+
+**Observação**
+- Sempre após usar deve ser feito os métodos ``close()`` e ``flush()``, ele também pode
+ser usado com um ``try-with-resources``, lembre-se que o flush libera os buffers, use o flush
+antes do close.
