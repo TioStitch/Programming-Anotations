@@ -5,3 +5,8 @@
 
 **1. Capítulo - Arquivos (FILES)**
 - Trabalho com Arquivos.
+
+# Por que estou soltando minhas anotações ?
+> Eu não sei se vou ter tempo para continuar sendo
+> um desenvolvedor por conta do colégio, então espero
+> que possa passar o que eu sei adiante.
